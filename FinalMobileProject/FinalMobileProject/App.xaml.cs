@@ -24,7 +24,7 @@ namespace FinalMobileProject
             
 
             DependencyService.Register<MockDataStore>();
-            MainPage = new MainPage();
+            MainPage = new login();
         }
 
         protected override void OnStart()
