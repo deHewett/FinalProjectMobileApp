@@ -9,6 +9,9 @@ namespace FinalMobileProject.Views
 {
     public partial class login : ContentPage
     {
+        public login(){
+            InitializeComponent();
+    }
         private void Button_Clicked(object sender, EventArgs e)
         {
             try
