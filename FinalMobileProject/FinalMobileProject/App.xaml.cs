@@ -13,9 +13,15 @@ namespace FinalMobileProject
 
         public App()
         {
-            InitializeComponent();
-            var client = new MongoClient("mongodb + srv://admin:admin@cluster0-gp7ml.mongodb.net/WebProject?retryWrites=true&w=majority");
-            var database = client.GetDatabase("Users");
+            try {
+                InitializeComponent();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            
+            
 
             DependencyService.Register<MockDataStore>();
             MainPage = new MainPage();
@@ -24,6 +30,7 @@ namespace FinalMobileProject
         protected override void OnStart()
         {
             // Handle when your app starts
+            
         }
 
         protected override void OnSleep()
