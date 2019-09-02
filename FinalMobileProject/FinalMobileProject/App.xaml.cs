@@ -6,6 +6,7 @@ using FinalMobileProject.Views;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
+
 namespace FinalMobileProject
 {
     public partial class App : Application
@@ -24,7 +25,7 @@ namespace FinalMobileProject
             
 
             DependencyService.Register<MockDataStore>();
-            MainPage = new login();
+            MainPage = new NavigationPage( new login());
         }
 
         protected override void OnStart()

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FinalMobileProject.Views.SignUp">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label HorizontalOptions="Center" FontSize="20" Text="Enter Username"/>
+            <Entry HorizontalOptions="FillAndExpand" Placeholder="Username" FontSize="20" x:Name="EntryUsername"/>
+            <Label HorizontalOptions="Center" FontSize="20" Text="Enter Password"/>
+            <Entry HorizontalOptions="FillAndExpand" Placeholder="Password" FontSize="20" x:Name="EnterPassword"/>
+            <Label HorizontalOptions="Center" FontSize="20" Text="Confirm Password"/>
+            <Entry HorizontalOptions="FillAndExpand" Placeholder="Confirm Password" FontSize="20" x:Name="ConfirmPassword"/>
+            <Label HorizontalOptions="Center" FontSize="20" Text="Email Address"/>
+            <Entry HorizontalOptions="FillAndExpand" Placeholder="Email Address" FontSize="20" x:Name="Email"/>
+            <Label HorizontalOptions="Center" FontSize="20" Text="Contact Number"/>
+            <Entry HorizontalOptions="FillAndExpand" Placeholder="Contact Number" FontSize="20" x:Name="Number"/>
+            <Label HorizontalOptions="Center" FontSize="20" Text="Billing Address"/>
+            <Entry HorizontalOptions="FillAndExpand" Placeholder="Billing Address" FontSize="20" x:Name="Address"/>
+            <StackLayout Orientation="Horizontal" HeightRequest="50" Padding="5">
+                <StackLayout Spacing="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand">
+                   
+                    <Button Text="Submit" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" TextColor="Black" BackgroundColor="LawnGreen" Clicked="Button_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
