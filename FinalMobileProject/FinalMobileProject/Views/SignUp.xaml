@@ -8,11 +8,11 @@
     <ContentPage.Content>
         <StackLayout>
             <Label HorizontalOptions="Center" FontSize="20" Text="Enter Username"/>
-            <Entry HorizontalOptions="FillAndExpand" Placeholder="Username" FontSize="20" x:Name="EntryUsername"/>
+            <Entry HorizontalOptions="FillAndExpand" Placeholder="Username" FontSize="20" x:Name="Username"/>
             <Label HorizontalOptions="Center" FontSize="20" Text="Enter Password"/>
-            <Entry HorizontalOptions="FillAndExpand" Placeholder="Password" FontSize="20" x:Name="EnterPassword"/>
-            <Label HorizontalOptions="Center" FontSize="20" Text="Confirm Password"/>
-            <Entry HorizontalOptions="FillAndExpand" Placeholder="Confirm Password" FontSize="20" x:Name="ConfirmPassword"/>
+            <Entry HorizontalOptions="FillAndExpand" Placeholder="Password" FontSize="20" x:Name="Password"/>
+            <Label HorizontalOptions="Center" FontSize="20" Text="Full Name"/>
+            <Entry HorizontalOptions="FillAndExpand" Placeholder="Full name" FontSize="20" x:Name="FullName"/>
             <Label HorizontalOptions="Center" FontSize="20" Text="Email Address"/>
             <Entry HorizontalOptions="FillAndExpand" Placeholder="Email Address" FontSize="20" x:Name="Email"/>
             <Label HorizontalOptions="Center" FontSize="20" Text="Contact Number"/>

@@ -11,7 +11,7 @@ namespace FinalMobileProject
 {
     public partial class App : Application
     {
-
+        public static string DB_PATH = string.Empty;
         public App()
         {
             try {
@@ -28,6 +28,12 @@ namespace FinalMobileProject
             MainPage = new NavigationPage( new login());
         }
 
+        public App(string DB_path)
+        {
+            InitializeComponent();
+            DB_PATH = DB_path;
+            MainPage = new NavigationPage(new login());
+        }
         protected override void OnStart()
         {
             // Handle when your app starts

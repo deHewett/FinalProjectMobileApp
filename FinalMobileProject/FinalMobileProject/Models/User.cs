@@ -27,7 +27,7 @@ namespace FinalMobileProject.Models
         public string Email { get; set; }
         public string ContactNumber { get; set; }
         public string BillingAddress { get; set; }
-        public string DeliveryAddress { get; set; }
+        //public string DeliveryAddress { get; set; }
         public string UserType { get; set; }
     }
 }

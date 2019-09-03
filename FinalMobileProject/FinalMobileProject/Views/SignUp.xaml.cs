@@ -17,10 +17,27 @@ namespace FinalMobileProject.Views
             InitializeComponent();
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
-
-
+            Models.User user = new Models.User()
+            {
+                Username = Username.Text,
+                Password = Password.Text,
+                FullName = FullName.Text,
+                Email = Email.Text,
+                BillingAddress = Address.Text,
+            };
+            Hashing.HashPassword(user.Password);
+            using (SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(App.DB_PATH))
+            {
+                conn.CreateTable<Models.User>();
+                var numberOfRows = conn.Insert(user);
+                if (numberOfRows > 0)
+                {
+                    await DisplayAlert("Sucess", "User added", "Great");
+                    await Navigation.PopAsync();
+                }
+            }
         }
     }
 }
