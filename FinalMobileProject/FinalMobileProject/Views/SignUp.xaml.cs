@@ -13,6 +13,8 @@ namespace FinalMobileProject.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SignUp : ContentPage
     {
+        SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(App.db_path);
+
         public SignUp()
         {
             InitializeComponent();
@@ -21,7 +23,7 @@ namespace FinalMobileProject.Views
         private async void Button_Clicked(object sender, EventArgs e)
         {
             string hash = Hashing.HashPassword(Password.Text);
-            User user =  new User()
+            User user = new User()
             {
                 Username = Username.Text,
                 Password = hash,
@@ -32,7 +34,8 @@ namespace FinalMobileProject.Views
 
             Console.WriteLine("THIS IS PRE INSERT USER OBJECT: " + user.Username);
 
-            using (SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(App.db_path))
+
+            using (conn)
             {
                 conn.CreateTable<User>();
                 var numberOfRows = conn.Insert(user);
@@ -45,6 +48,13 @@ namespace FinalMobileProject.Views
                     await DisplayAlert("Failure", "Something went wrong, the User wasn't added", "Return");
                 }
             }
+        }
+
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+            conn.CreateTable<User>();
+            var users = conn.Table<User>().ToList();
+            Datalist.ItemsSource = users;
         }
     }
 }

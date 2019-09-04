@@ -24,8 +24,16 @@
                 HorizontalOptions="CenterAndExpand">
                    
                     <Button Text="Submit" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" TextColor="Black" BackgroundColor="LawnGreen" Clicked="Button_Clicked"/>
+                    <Button Text="Show" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" TextColor="Black" BackgroundColor="LawnGreen" Clicked="Button_Clicked_1"/>
                 </StackLayout>
             </StackLayout>
+            <ListView x:Name="Datalist">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Username}" Detail="{Binding BillingAddress}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
