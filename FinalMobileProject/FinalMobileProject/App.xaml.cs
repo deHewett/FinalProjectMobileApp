@@ -5,13 +5,14 @@ using FinalMobileProject.Services;
 using FinalMobileProject.Views;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using FinalMobileProject.Models;
 
 
 namespace FinalMobileProject
 {
     public partial class App : Application
     {
-        public static string DB_PATH = string.Empty;
+        public static String db_path = string.Empty;
         public App()
         {
             try {
@@ -28,16 +29,16 @@ namespace FinalMobileProject
             MainPage = new NavigationPage( new login());
         }
 
-        public App(string DB_path)
+        public App(string DB_PATH)
         {
             InitializeComponent();
-            DB_PATH = DB_path;
+            db_path = DB_PATH;
             MainPage = new NavigationPage(new login());
         }
         protected override void OnStart()
         {
             // Handle when your app starts
-            
+            InitDB();
         }
 
         protected override void OnSleep()
@@ -48,6 +49,15 @@ namespace FinalMobileProject
         protected override void OnResume()
         {
             // Handle when your app resumes
+        }
+
+        private void InitDB()
+        {
+            using(SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(App.db_path))
+            {
+                conn.CreateTable<User>();
+                //conn.CreateTable<Product>();
+            }
         }
     }
 }

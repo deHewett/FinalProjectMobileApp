@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using FinalMobileProject.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using SQLite;
 
 namespace FinalMobileProject.Views
 {
@@ -19,23 +20,29 @@ namespace FinalMobileProject.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            Models.User user = new Models.User()
+            string hash = Hashing.HashPassword(Password.Text);
+            User user =  new User()
             {
                 Username = Username.Text,
-                Password = Password.Text,
+                Password = hash,
                 FullName = FullName.Text,
                 Email = Email.Text,
                 BillingAddress = Address.Text,
             };
-            Hashing.HashPassword(user.Password);
-            using (SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(App.DB_PATH))
+
+            Console.WriteLine("THIS IS PRE INSERT USER OBJECT: " + user.Username);
+
+            using (SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(App.db_path))
             {
-                conn.CreateTable<Models.User>();
+                conn.CreateTable<User>();
                 var numberOfRows = conn.Insert(user);
                 if (numberOfRows > 0)
                 {
-                    await DisplayAlert("Sucess", "User added", "Great");
-                    await Navigation.PopAsync();
+                    await DisplayAlert("Success", "User has been added", "Return");
+                }
+                else
+                {
+                    await DisplayAlert("Failure", "Something went wrong, the User wasn't added", "Return");
                 }
             }
         }
