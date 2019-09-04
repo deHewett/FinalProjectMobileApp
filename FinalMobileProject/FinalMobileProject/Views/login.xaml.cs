@@ -1,11 +1,13 @@
 ﻿using System;
 using Xamarin.Forms;
+using FinalMobileProject.Models;
 
 
 namespace FinalMobileProject.Views
 {
     public partial class login : ContentPage
     {
+        SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(App.db_path);
         public login() {
             InitializeComponent();
         }
@@ -18,8 +20,21 @@ namespace FinalMobileProject.Views
                 var username = EntryUsername.Text;
                 var password = EntryPassword.Text;
                 try {
-                    
-                    
+                    conn.CreateTable<User>();
+                    var users = conn.Table<User>().ToList();
+                    for(int i = 0; i< users.Capacity; i++)
+                    {
+                        if(users[i].Username == username)
+                        {
+                            
+                            if(Hashing.ValidatePassword(password, users[i].Password))
+                            {
+                                Navigation.PushAsync(new MainPage());
+                            }
+                        }
+                    }
+                    //Datalist.ItemsSource = users;
+
                 }
                 catch(Exception error)
                 {

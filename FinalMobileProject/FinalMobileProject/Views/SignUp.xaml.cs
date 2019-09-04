@@ -42,6 +42,7 @@ namespace FinalMobileProject.Views
                 if (numberOfRows > 0)
                 {
                     await DisplayAlert("Success", "User has been added", "Return");
+                    await Navigation.PopAsync();
                 }
                 else
                 {
