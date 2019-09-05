@@ -38,7 +38,7 @@ namespace FinalMobileProject.Views
                 catch(Exception error)
                 {
                     Console.WriteLine(error);
-                }
+                 }
                 /*
 
                 // insert document
