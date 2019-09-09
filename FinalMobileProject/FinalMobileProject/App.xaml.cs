@@ -26,14 +26,14 @@ namespace FinalMobileProject
             
 
             DependencyService.Register<MockDataStore>();
-            MainPage = new NavigationPage( new login());
+            MainPage = new NavigationPage( new Page1());
         }
 
         public App(string DB_PATH)
         {
             InitializeComponent();
             db_path = DB_PATH;
-            MainPage = new NavigationPage(new login());
+            MainPage = new NavigationPage(new Products());
         }
         protected override void OnStart()
         {

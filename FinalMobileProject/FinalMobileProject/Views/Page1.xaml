@@ -7,9 +7,21 @@
              x:Class="FinalMobileProject.Views.Page1">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label HorizontalOptions="Center" FontSize="20" Text="Enter image url"/>
+            <Entry HorizontalOptions="FillAndExpand" Placeholder="Image" FontSize="20" x:Name="Image"/>
+            <Label HorizontalOptions="Center" FontSize="20" Text="Title"/>
+            <Entry HorizontalOptions="FillAndExpand" Placeholder="Title" FontSize="20" x:Name="Title"/>
+            <Label HorizontalOptions="Center" FontSize="20" Text="Price"/>
+            <Entry HorizontalOptions="FillAndExpand" Placeholder="Price" FontSize="20" x:Name="Price"/>
+            <Label HorizontalOptions="Center" FontSize="20" Text="Description"/>
+            <Entry HorizontalOptions="FillAndExpand" Placeholder="Description" FontSize="20" x:Name="Description"/>
+            <StackLayout Orientation="Horizontal" HeightRequest="50" Padding="5">
+                <StackLayout Spacing="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand">
+
+                    <Button Text="Submit" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" TextColor="Black" BackgroundColor="LawnGreen" Clicked="Button_Clicked"/>
+                </StackLayout>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
