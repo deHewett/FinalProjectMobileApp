@@ -25,6 +25,7 @@
                                    WidthRequest="66" Grid.RowSpan="2" Source="{Binding Image}"/>
                             <Label Grid.Column="1" Text="{Binding Title}" VerticalOptions="End"/>
                             <Label Grid.Column="1" Grid.Row="1" VerticalOptions="Start" Text="{Binding Price}"/>
+                            
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

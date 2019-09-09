@@ -29,7 +29,7 @@ namespace FinalMobileProject.Views
                             
                             if(Hashing.ValidatePassword(password, users[i].Password))
                             {
-                                Navigation.PushAsync(new MainPage());
+                                Navigation.PushAsync(new PayNow());
                             }
                         }
                     }

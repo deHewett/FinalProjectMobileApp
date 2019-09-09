@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FinalMobileProject.Views.Cart">
+    <StackLayout>
+
+        <ListView x:Name="cart" RowHeight="60">
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout  Orientation="Vertical" Padding="2" VerticalOptions="Fill" HorizontalOptions="StartAndExpand">
+                            <StackLayout Orientation="Horizontal"  >
+                                <Image Source="{Binding Image}" HeightRequest="50" WidthRequest="50"/>
+                                <StackLayout Orientation="Horizontal"   >
+                                    <StackLayout Orientation="Vertical" VerticalOptions="Fill" HorizontalOptions="End" >
+                                    <Label Text="{Binding Name}" FontSize="Medium" />
+                                        <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="End">
+                                            <Label Text="{Binding Price}" FontSize="Small" VerticalOptions="End" HorizontalOptions="End" />
+                                            <Label Text="Qty:" WidthRequest="60" HorizontalTextAlignment="End" VerticalOptions="End" HorizontalOptions="End"/>
+                                            <Label Text="{Binding Qty}" FontSize="Small" HorizontalTextAlignment="End" VerticalOptions="End" HorizontalOptions="End" />
+                                            <Label Text="Total:" WidthRequest="60" HorizontalTextAlignment="End" VerticalOptions="End" FontSize="20" HorizontalOptions="End"/>
+                                           <Label Text="{Binding Total}" VerticalOptions="End" HorizontalOptions="End" FontSize="20" HorizontalTextAlignment="End" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout Orientation="Horizontal" BackgroundColor="White" Padding="10" HorizontalOptions="End" VerticalOptions="Center">
+            <Label  Text="Grand Total" FontSize="Micro" TextColor="Maroon"/>
+            <Label x:Name="total" FontSize="Small" TextColor="Black"/>
+        </StackLayout>
+        <Button Text="Pay Now" Clicked="Button_Clicked"/>
+    </StackLayout>
+</ContentPage>

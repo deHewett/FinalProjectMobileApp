@@ -13,22 +13,37 @@ namespace FinalMobileProject.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProductId : ContentPage
     {
-        public ProductId( string Image, string Title, string Price, string Description)
+         string pImage;
+         string pPrice;
+        
+
+        public ProductId(string Image, string Title, string Price, string Description)
         {
             InitializeComponent();
 
-            MyImageCall.Source = new UriImageSource()
-            {
-                Uri = new Uri(Image)
-            };
+            MyImageCall.Source = Image;
             MyTitle.Text = Title;
-            MyPrice.Text = Price;
+            MyPrice.Text = "$" + Price;
             MyDescription.Text = Description;
-
+            pImage = Image;
+            pPrice = Price;
 
 
         }
 
-        
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            CartRecord pd = new CartRecord();
+            int qty = Convert.ToInt32(Qty.Text);
+            int total = Convert.ToInt16(pPrice);
+            pd.Name = MyTitle.Text;
+            pd.Price = MyPrice.Text;
+            pd.Total = (qty * total).ToString();
+            pd.Qty = qty + "";
+            pd.Image = pImage;
+            CartQuery c = new CartQuery();
+            c.InsertDetails(pd);
+            Navigation.PushAsync(new Cart());
+        }
     }
 }
