@@ -33,7 +33,7 @@ namespace FinalMobileProject
         {
             InitializeComponent();
             db_path = DB_PATH;
-            MainPage = new NavigationPage(new Products());
+            MainPage = new NavigationPage(new MainMenu());
         }
         protected override void OnStart()
         {

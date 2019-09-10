@@ -4,75 +4,17 @@
              x:Class="FinalMobileProject.Views.AboutPage"
              xmlns:vm="clr-namespace:FinalMobileProject.ViewModels"
              Title="{Binding Title}">
-    
-    <ContentPage.BindingContext>
-        <vm:AboutViewModel />
-    </ContentPage.BindingContext>
-    
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Color x:Key="Primary">#2196F3</Color>
-            <Color x:Key="Accent">#96d1ff</Color>
-            <Color x:Key="LightTextColor">#999999</Color>
-        </ResourceDictionary>
-    </ContentPage.Resources>
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                    <Image Source="xamarin_logo.png" VerticalOptions="Center" HeightRequest="64" />
-                </ContentView>
-            </StackLayout>
+    <ScrollView  Orientation = "Vertical" VerticalOptions="StartAndExpand">
+        <StackLayout Spacing="10"  Padding="15" Orientation="Vertical" x:Name ="outerstack">
+            <Label Text="About Us" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Black" BackgroundColor="Silver" HeightRequest="50" VerticalTextAlignment="Center"/>
+            <Image Source="https://image.shutterstock.com/image-vector/tree-leaf-vector-logo-design-260nw-553388158.jpg" HeightRequest="250" WidthRequest="250" Aspect="AspectFit" />
+
+            <Label  Text="Green World is an e commerce store. We provide our customers and staff with number of eco friendly products. Our store has everything from metal straw to recycleable bags." FontSize="Medium" BackgroundColor="White" TextColor="Gray" />
+
+            <Label Text="Developer Details" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Black" BackgroundColor="Silver" HeightRequest="50" VerticalTextAlignment="Center"/>
+            <Label Text="This app has been developed by Abhishek kochar and Dallas Hewett." FontSize="Medium" BackgroundColor="White" TextColor="Gray" />
         </StackLayout>
-        <ScrollView Grid.Row="1">
-            <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
-                <Label FontSize="22">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="AppName" FontAttributes="Bold" FontSize="22" />
-                                <Span Text=" " />
-                                <Span Text="1.0" ForegroundColor="{StaticResource LightTextColor}" />
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Label>
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="This app is written in C# and native APIs using the" />
-                                <Span Text=" " />
-                                <Span Text="Xamarin Platform" FontAttributes="Bold" />
-                                <Span Text="." />
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Label>
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="It shares code with its" />
-                                <Span Text=" " />
-                                <Span Text="iOS, Android, and Windows" FontAttributes="Bold" />
-                                <Span Text=" " />
-                                <Span Text="versions." />
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Button Margin="0,10,0,0" Text="Learn more"
-                        Command="{Binding OpenWebCommand}"
-                        BackgroundColor="{StaticResource Primary}"
-                        TextColor="White" />
-            </StackLayout>
-        </ScrollView>
-    </Grid>
-    
+    </ScrollView>
+
 </ContentPage>

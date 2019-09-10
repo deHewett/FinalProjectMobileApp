@@ -10,17 +10,19 @@ using Xamarin.Forms.Xaml;
 namespace FinalMobileProject.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ThankYou : ContentPage
+    public partial class MainMenu : ContentPage
     {
-        public ThankYou()
+        public MainMenu()
         {
             InitializeComponent();
-            this.BackgroundColor = Color.White;
         }
-
-        private void Button_Clicked(object sender, EventArgs e)
+        private void Products_btn_Clicked( object sender, EventArgs e)
         {
-            Navigation.PopToRootAsync();
+            Navigation.PushAsync(new Products());
+        }
+        private void About_btn_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AboutPage());
         }
     }
 }

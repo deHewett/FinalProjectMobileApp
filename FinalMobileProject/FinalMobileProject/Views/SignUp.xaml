@@ -6,25 +6,22 @@
              mc:Ignorable="d"
              x:Class="FinalMobileProject.Views.SignUp">
     <ContentPage.Content>
-        <StackLayout>
-            <Label HorizontalOptions="Center" FontSize="20" Text="Enter Username"/>
-            <Entry HorizontalOptions="FillAndExpand" Placeholder="Username" FontSize="20" x:Name="Username"/>
-            <Label HorizontalOptions="Center" FontSize="20" Text="Enter Password"/>
-            <Entry HorizontalOptions="FillAndExpand" Placeholder="Password" FontSize="20" x:Name="Password"/>
-            <Label HorizontalOptions="Center" FontSize="20" Text="Full Name"/>
-            <Entry HorizontalOptions="FillAndExpand" Placeholder="Full name" FontSize="20" x:Name="FullName"/>
-            <Label HorizontalOptions="Center" FontSize="20" Text="Email Address"/>
-            <Entry HorizontalOptions="FillAndExpand" Placeholder="Email Address" FontSize="20" x:Name="Email"/>
-            <Label HorizontalOptions="Center" FontSize="20" Text="Contact Number"/>
-            <Entry HorizontalOptions="FillAndExpand" Placeholder="Contact Number" FontSize="20" x:Name="Number"/>
-            <Label HorizontalOptions="Center" FontSize="20" Text="Billing Address"/>
-            <Entry HorizontalOptions="FillAndExpand" Placeholder="Billing Address" FontSize="20" x:Name="Address"/>
+        <StackLayout  BackgroundColor="#f2e6d9">
+            <Label HorizontalOptions="Center" FontSize="Medium" Text="Enter Username"/>
+            <Entry HorizontalOptions="FillAndExpand" Placeholder="Username" FontSize="Medium" x:Name="Username"/>
+            <Label HorizontalOptions="Center" FontSize="Medium" Text="Enter Password"/>
+            <Entry HorizontalOptions="FillAndExpand" Placeholder="Password" FontSize="Medium" x:Name="Password"/>
+            <Label HorizontalOptions="Center" FontSize="Medium" Text="Full Name"/>
+            <Entry HorizontalOptions="FillAndExpand" Placeholder="Full name" FontSize="Medium" x:Name="FullName"/>
+            <Label HorizontalOptions="Center" FontSize="Medium" Text="Email Address"/>
+            <Entry HorizontalOptions="FillAndExpand" Placeholder="Email Address" FontSize="Medium" x:Name="Email"/>
+            <Label HorizontalOptions="Center" FontSize="Medium" Text="Contact Number"/>
+            <Entry HorizontalOptions="FillAndExpand" Placeholder="Contact Number" FontSize="Medium" x:Name="Number"/>
+            <Label HorizontalOptions="Center" FontSize="Medium" Text="Billing Address"/>
+            <Entry HorizontalOptions="FillAndExpand" Placeholder="Billing Address" FontSize="Medium" x:Name="Address"/>
             <StackLayout Orientation="Horizontal" HeightRequest="50" Padding="5">
-                <StackLayout Spacing="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand">
-                   
-                    <Button Text="Submit" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" TextColor="Black" BackgroundColor="LawnGreen" Clicked="Button_Clicked"/>
-                    <Button Text="Show" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" TextColor="Black" BackgroundColor="LawnGreen" Clicked="Button_Clicked_1"/>
+                <StackLayout Spacing="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Button Text="Submit" HorizontalOptions="CenterAndExpand"    Clicked="Button_Clicked" BackgroundColor="Transparent" TextColor="Maroon" BorderColor="Maroon" BorderRadius="50" BorderWidth="1" FontSize="12"/>
                 </StackLayout>
             </StackLayout>
             <ListView x:Name="Datalist">

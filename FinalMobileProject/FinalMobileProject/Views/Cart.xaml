@@ -23,7 +23,7 @@
                                             <Label Text="{Binding Qty}" FontSize="Small" HorizontalTextAlignment="End" VerticalOptions="End" HorizontalOptions="End" />
                                             <Label Text="Total:" WidthRequest="60" HorizontalTextAlignment="End" VerticalOptions="End" FontSize="20" HorizontalOptions="End"/>
                                            <Label Text="{Binding Total}" VerticalOptions="End" HorizontalOptions="End" FontSize="20" HorizontalTextAlignment="End" />
-                                            <l
+                                           
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
