@@ -10,6 +10,8 @@ namespace FinalMobileProject.Views
         SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(App.db_path);
         public login() {
             InitializeComponent();
+          
+            this.Title = "Login";
         }
         
 
@@ -29,7 +31,7 @@ namespace FinalMobileProject.Views
                             
                             if(Hashing.ValidatePassword(password, users[i].Password))
                             {
-                                Navigation.PushAsync(new PayNow());
+                                Navigation.PushAsync(new MainMenu());
                             }
                         }
                     }

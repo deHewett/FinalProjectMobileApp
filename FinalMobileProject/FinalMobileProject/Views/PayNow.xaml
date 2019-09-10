@@ -12,6 +12,7 @@
             <Entry Placeholder="Name as in cradit card"/>
             <Entry Placeholder="Cradit card number"/>
             <Entry Placeholder="CV Code"/>
+            <Entry Placeholder="Discount Code"/>
             <Button Text="Complete Payment" Clicked="Button_Clicked"/>
 
         </StackLayout>

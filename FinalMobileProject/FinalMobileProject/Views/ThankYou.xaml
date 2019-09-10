@@ -8,8 +8,8 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
             
-            <Label Text="You have successfully completed the order!" FontSize="Small"/>
-            <Label Text="We will ship your product on a next business day." FontSize="Micro"/>
+            <Label Text="You have successfully completed the order!" FontSize="Medium" TextColor="Black"/>
+            <Label Text="We will ship your product on a next business day." FontSize="Medium" TextColor="Black"/>
             <Button Text="Back to Main Menu" Clicked="Button_Clicked"/>
         </StackLayout>
     </ContentPage.Content>

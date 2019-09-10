@@ -12,6 +12,7 @@ namespace FinalMobileProject
 {
     public partial class App : Application
     {
+      
         public static String db_path = string.Empty;
         public App()
         {
@@ -26,14 +27,18 @@ namespace FinalMobileProject
             
 
             DependencyService.Register<MockDataStore>();
-            MainPage = new NavigationPage( new Page1());
+            MainPage = new NavigationPage(new Page1());
+            
         }
 
         public App(string DB_PATH)
         {
             InitializeComponent();
             db_path = DB_PATH;
-            MainPage = new NavigationPage(new MainMenu());
+            MainPage = new NavigationPage(new login())
+            {
+                BarBackgroundColor = Color.LightGreen
+            }; 
         }
         protected override void OnStart()
         {

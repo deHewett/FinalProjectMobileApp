@@ -13,7 +13,7 @@
             <Label  Text="Green World is an e commerce store. We provide our customers and staff with number of eco friendly products. Our store has everything from metal straw to recycleable bags." FontSize="Medium" BackgroundColor="White" TextColor="Gray" />
 
             <Label Text="Developer Details" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Black" BackgroundColor="Silver" HeightRequest="50" VerticalTextAlignment="Center"/>
-            <Label Text="This app has been developed by Abhishek kochar and Dallas Hewett." FontSize="Medium" BackgroundColor="White" TextColor="Gray" />
+            <Label Text="This app has been developed by Abhishek Kochar and Dallas Hewett." FontSize="Medium" BackgroundColor="White" TextColor="Gray" />
         </StackLayout>
     </ScrollView>
 

@@ -15,12 +15,13 @@ namespace FinalMobileProject.Views
         public ThankYou()
         {
             InitializeComponent();
-            this.BackgroundColor = Color.White;
+            this.Title = "Thank You";
+            this.BackgroundImage = "background.jpg";
         }
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            Navigation.PopToRootAsync();
+            Navigation.PushAsync(new MainMenu());
         }
     }
 }

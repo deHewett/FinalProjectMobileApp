@@ -20,7 +20,10 @@ namespace FinalMobileProject.Views
         {
             InitializeComponent();
             BindingContext = new ProductViewModel();
+            this.Title = "Products";
+            this.BackgroundImage = "background.jpg";
         }
+
 
         private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {

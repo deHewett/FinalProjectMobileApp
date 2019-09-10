@@ -4,16 +4,19 @@
             xmlns:views="clr-namespace:FinalMobileProject.Views"
             x:Class="FinalMobileProject.Views.login">
     <StackLayout BackgroundColor="#f2e6d9" >
-        <Label HorizontalOptions="Center" VerticalOptions="Start" FontSize="20" Text="Enter Username"/>
-        <Entry HorizontalOptions="FillAndExpand" Placeholder="Username" FontSize="20" x:Name="EntryUsername"/>
+        <Label Text="Welcome to Green World" FontSize="Large" HorizontalOptions="Center"/>
+        <Image Source="https://image.shutterstock.com/image-vector/tree-leaf-vector-logo-design-260nw-553388158.jpg" HeightRequest="50" WidthRequest="50" Aspect="AspectFit" />
+        <Label Text="Please login to continue!!" FontSize="Large" TextColor="DarkGray" HorizontalOptions="Center"/>
+        <Label/>
+        <Label/>
+        <Label/>
+        <Label HorizontalOptions="Center" VerticalOptions="Start" FontSize="20" Text="Enter Username" />
+        <Entry HorizontalOptions="FillAndExpand" Placeholder="Username" FontSize="20" x:Name="EntryUsername" />
         <Label HorizontalOptions="Center" FontSize="20"  Text="Enter Password"/>
         <Entry HorizontalOptions="FillAndExpand"  Placeholder="Password" FontSize="20" x:Name="EntryPassword"/>
-
-
+        
         <StackLayout  Orientation="Vertical" HeightRequest="50" Padding="5" VerticalOptions="FillAndExpand">
-           
-
-                <Button Text="Login"  Clicked="Button_Clicked" BackgroundColor="Transparent" TextColor="Maroon" BorderColor="Maroon" BorderRadius="50" BorderWidth="1" FontSize="12"/>
+            <Button Text="Login"  Clicked="Button_Clicked" BackgroundColor="Transparent" TextColor="Maroon" BorderColor="Maroon" BorderRadius="50" BorderWidth="1" FontSize="12"/>
             <Label  Text="Not a member yet? click the button and sign up now!" FontSize="Medium"/>
 
             <Button Text="SignUp"  Clicked="Button_Clicked_1"  BackgroundColor="Transparent" TextColor="Maroon" BorderColor="Maroon" BorderRadius="50" BorderWidth="1" FontSize="12"/>
