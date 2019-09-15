@@ -7,6 +7,9 @@ using FinalMobileProject.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using SQLite;
+using System.Reflection;
+using Octokit;
+using User = FinalMobileProject.Models.User;
 
 namespace FinalMobileProject.Views
 {
@@ -19,38 +22,54 @@ namespace FinalMobileProject.Views
         {
             InitializeComponent();
         }
+        
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        private void Button_Clicked(object sender, EventArgs e)
         {
-            string hash = Hashing.HashPassword(Password.Text);
-            User user = new User()
+            //string hash = Hashing.HashPassword(Password.Text);
+            User contributor = new User()
             {
                 Username = Username.Text,
-                Password = hash,
+                Password = Password.Text,
                 FullName = FullName.Text,
                 Email = Email.Text,
                 BillingAddress = Address.Text,
             };
 
-            Console.WriteLine("THIS IS PRE INSERT USER OBJECT: " + user.Username);
-
+            Console.WriteLine("THIS IS PRE INSERT USER OBJECT: " + contributor.Username);
 
             using (conn)
             {
-                conn.CreateTable<User>();
-                var numberOfRows = conn.Insert(user);
-                if (numberOfRows > 0)
+                if(CheckContributor(contributor))
                 {
-                    await DisplayAlert("Success", "User has been added", "Return");
-                    await Navigation.PopAsync();
+                    conn.CreateTable<User>();
+                    contributor.Password = Hashing.HashPassword(contributor.Password);
+                    conn.Insert(contributor);
+                    DisplayAlert("ADDED", "User has been added", "Go back");
+                    Navigation.PopAsync();
                 }
                 else
                 {
-                    await DisplayAlert("Failure", "Something went wrong, the User wasn't added", "Return");
+                    DisplayAlert("Sorry", "There was an error uploading the user", "back");
                 }
             }
         }
+        private bool CheckContributor(User contributor)
+        {
+            foreach(PropertyInfo contributee in contributor.GetType().GetProperties())
+            {
+                if(contributee.PropertyType == typeof(string))
+                {
+                    string value = (string)contributee.GetValue(contributor);
+                    if (string.IsNullOrEmpty(value))
+                        return false;
+                }
+            }
+            return true;
+        }
 
+
+        //not using this button
         private void Button_Clicked_1(object sender, EventArgs e)
         {
             conn.CreateTable<User>();
