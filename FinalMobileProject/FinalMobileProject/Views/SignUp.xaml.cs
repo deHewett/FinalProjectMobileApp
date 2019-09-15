@@ -8,7 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using SQLite;
 using System.Reflection;
-using Octokit;
+
 using User = FinalMobileProject.Models.User;
 
 namespace FinalMobileProject.Views
@@ -43,14 +43,14 @@ namespace FinalMobileProject.Views
                 if(CheckContributor(contributor))
                 {
                     conn.CreateTable<User>();
-                    contributor.Password = Hashing.HashPassword(contributor.Password);
+                   contributor.Password = Hashing.HashPassword(contributor.Password);
                     conn.Insert(contributor);
                     DisplayAlert("ADDED", "User has been added", "Go back");
                     Navigation.PopAsync();
                 }
                 else
                 {
-                    DisplayAlert("Sorry", "There was an error uploading the user", "back");
+                    DisplayAlert("Sorry", "There was an error uploading the user", "Back");
                 }
             }
         }
@@ -62,9 +62,18 @@ namespace FinalMobileProject.Views
                 {
                     string value = (string)contributee.GetValue(contributor);
                     if (string.IsNullOrEmpty(value))
-                        return false;
+                        
+                 
+                    return false;
                 }
+                Console.WriteLine("this is the user: " + contributor.Username);
+                Console.WriteLine("this is the password: " + contributor.Password);
+                Console.WriteLine("this is the full name: " + contributor.FullName);
+                Console.WriteLine("this is the email: " + contributor.Email);
+                Console.WriteLine("this is the address: " + contributor.BillingAddress);
+
             }
+          
             return true;
         }
 
