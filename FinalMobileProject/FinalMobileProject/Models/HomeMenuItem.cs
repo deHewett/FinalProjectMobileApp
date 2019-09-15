@@ -6,8 +6,8 @@ namespace FinalMobileProject.Models
 {
     public enum MenuItemType
     {
-        Browse,
-        About
+        Prodcuts,
+        Bags
     }
     public class HomeMenuItem
     {

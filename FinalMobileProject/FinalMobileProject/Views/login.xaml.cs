@@ -31,7 +31,7 @@ namespace FinalMobileProject.Views
                             
                             if(Hashing.ValidatePassword(password, users[i].Password))
                             {
-                                Navigation.PushAsync(new MainMenu());
+                                Navigation.PushAsync(new MenuPage());
                             }
                         }
                     }

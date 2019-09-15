@@ -43,7 +43,7 @@ namespace FinalMobileProject.Views
                 if(CheckContributor(contributor))
                 {
                     conn.CreateTable<User>();
-                   contributor.Password = Hashing.HashPassword(contributor.Password);
+                   contributor.Password = Hashing.HashPassword(Password.Text);
                     conn.Insert(contributor);
                     DisplayAlert("ADDED", "User has been added", "Go back");
                     Navigation.PopAsync();
@@ -58,19 +58,16 @@ namespace FinalMobileProject.Views
         {
             foreach(PropertyInfo contributee in contributor.GetType().GetProperties())
             {
-                if(contributee.PropertyType == typeof(string))
+                Console.WriteLine("this: " + contributee.PropertyType);
+                Console.WriteLine();
+                if (contributee.PropertyType == typeof(string))
                 {
                     string value = (string)contributee.GetValue(contributor);
                     if (string.IsNullOrEmpty(value))
-                        
-                 
-                    return false;
+
+
+                        return false;
                 }
-                Console.WriteLine("this is the user: " + contributor.Username);
-                Console.WriteLine("this is the password: " + contributor.Password);
-                Console.WriteLine("this is the full name: " + contributor.FullName);
-                Console.WriteLine("this is the email: " + contributor.Email);
-                Console.WriteLine("this is the address: " + contributor.BillingAddress);
 
             }
           

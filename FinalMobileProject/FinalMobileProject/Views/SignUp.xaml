@@ -10,7 +10,7 @@
             <Label HorizontalOptions="Center" FontSize="Medium" Text="Enter Username"/>
             <Entry HorizontalOptions="FillAndExpand" Placeholder="Username" FontSize="Medium" x:Name="Username"/>
             <Label HorizontalOptions="Center" FontSize="Medium" Text="Enter Password"/>
-            <Entry HorizontalOptions="FillAndExpand" Placeholder="Password" FontSize="Medium" x:Name="Password"/>
+            <Entry HorizontalOptions="FillAndExpand" Placeholder="Password" IsPassword="True" FontSize="Medium" x:Name="Password"/>
             <Label HorizontalOptions="Center" FontSize="Medium" Text="Full Name"/>
             <Entry HorizontalOptions="FillAndExpand" Placeholder="Full name" FontSize="Medium" x:Name="FullName"/>
             <Label HorizontalOptions="Center" FontSize="Medium" Text="Email Address"/>
