@@ -3,9 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ViewModels="clr-namespace:FinalMobileProject.ViewModels"
              mc:Ignorable="d"
              x:Class="FinalMobileProject.Views.Cart">
+
+
+    <ContentPage.BindingContext>
+        <ViewModels:ProductViewModel/>
+    </ContentPage.BindingContext>
     <StackLayout>
+
+   
 
         <ListView x:Name="cart" RowHeight="60">
             <ListView.ItemTemplate >
@@ -23,7 +31,8 @@
                                             <Label Text="{Binding Qty}" FontSize="Small" HorizontalTextAlignment="End" VerticalOptions="End" HorizontalOptions="End" />
                                             <Label Text="Total:" WidthRequest="60" HorizontalTextAlignment="End" VerticalOptions="End" FontSize="20" HorizontalOptions="End"/>
                                            <Label Text="{Binding Total}" VerticalOptions="End" HorizontalOptions="End" FontSize="20" HorizontalTextAlignment="End" />
-                                           
+                                            <Button Text="Remove" Clicked="Button_Clicked_1"/>
+
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>

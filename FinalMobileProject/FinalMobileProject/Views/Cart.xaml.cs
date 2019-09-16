@@ -1,4 +1,5 @@
 ﻿using FinalMobileProject.Models;
+using FinalMobileProject.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,14 @@ namespace FinalMobileProject.Views
         {
          //   DisplayAlert("Login", "Login required to complete the order process.", "Login Now");
             Navigation.PushAsync(new PayNow());
+        }
+
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            var product = button.BindingContext as Product;
+            var bind = BindingContext as ProductViewModel;
+            bind.RemoveCommand.Execute(product);
         }
     }
 }
