@@ -7,6 +7,7 @@ namespace FinalMobileProject.Views
 {
     public partial class login : ContentPage
     {
+        bool valid = false;
         SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(App.db_path);
         public login() {
             InitializeComponent();
@@ -29,17 +30,25 @@ namespace FinalMobileProject.Views
                 try {
                     conn.CreateTable<User>();
                     var users = conn.Table<User>().ToList();
-                    for(int i = 0; i< users.Capacity; i++)
+                    for (int i = 0; i < users.Capacity; i++)
                     {
-                        if(users[i].Username == username)
+                        if (users[i].Username == username && Hashing.ValidatePassword(password, users[i].Password))
                         {
-                            
-                            if(Hashing.ValidatePassword(password, users[i].Password))
-                            {
-                                Navigation.PushAsync(new MenuPage());
-                            }
+                            Navigation.PushAsync(new MenuPage());
+                            valid = true;
+
+                            /* if(Hashing.ValidatePassword(password, users[i].Password))
+                             {
+
+                             }*/
                         }
+                        
                     }
+                    if (!valid)
+                    {
+                        DisplayAlert("", "Incorrect username or password", "okay");
+                    }
+                    
                     //Datalist.ItemsSource = users;
 
                 }

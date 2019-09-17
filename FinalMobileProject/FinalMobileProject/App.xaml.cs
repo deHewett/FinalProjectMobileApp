@@ -49,12 +49,18 @@ namespace FinalMobileProject
         protected override void OnSleep()
         {
             // Handle when your app sleeps
+            using (SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(App.db_path))
+            {
+                conn.DropTable<CartRecord>();
+                //conn.CreateTable<Product>();
+            }
         }
 
         protected override void OnResume()
         {
             // Handle when your app resumes
         }
+       
 
         private void InitDB()
         {
