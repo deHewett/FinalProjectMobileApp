@@ -13,7 +13,12 @@ namespace FinalMobileProject.Views
           
             this.Title = "Login";
         }
-        
+
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
+        }
+
 
         private void Button_Clicked(object sender, EventArgs e)
         {
@@ -31,7 +36,7 @@ namespace FinalMobileProject.Views
                             
                             if(Hashing.ValidatePassword(password, users[i].Password))
                             {
-                                Navigation.PushAsync(new MainMenu());
+                                Navigation.PushAsync(new MenuPage());
                             }
                         }
                     }

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using Xamarin.Forms;
 
 namespace FinalMobileProject.ViewModels
 {
@@ -10,6 +11,18 @@ namespace FinalMobileProject.ViewModels
     class ProductViewModel
     {
         public ObservableCollection<Product> FoodList { get; set; }
+
+        public Command <Product> RemoveCommand
+        {
+            get
+            {
+                return new Command<Product>((product) =>
+                {
+                    FoodList.Remove(product);
+                }
+                );
+            }
+        }
         public ProductViewModel()
         {
             FoodList = new ObservableCollection<Product>();

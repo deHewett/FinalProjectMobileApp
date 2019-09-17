@@ -14,7 +14,7 @@ namespace FinalMobileProject.Views
         public AboutPage()
         {
             InitializeComponent();
-            this.Title = "About";
+            this.Title = "About Us";
         }
 
         private double width = 0;

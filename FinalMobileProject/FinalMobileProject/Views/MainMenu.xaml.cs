@@ -18,7 +18,7 @@ namespace FinalMobileProject.Views
         }
         private void Products_btn_Clicked( object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Products());
+            Navigation.PushAsync(new MenuPage());
         }
         private void About_btn_Clicked(object sender, EventArgs e)
         {

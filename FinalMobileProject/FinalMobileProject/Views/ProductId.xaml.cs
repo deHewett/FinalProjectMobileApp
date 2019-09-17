@@ -20,7 +20,7 @@ namespace FinalMobileProject.Views
         public ProductId(string Image, string Title, string Price, string Description)
         {
             InitializeComponent();
-
+            this.Title = Title;
             MyImageCall.Source = Image;
             MyTitle.Text = Title;
             MyPrice.Text = "$" + Price;

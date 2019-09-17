@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FinalMobileProject.Views.MenuPage"
+                  Title="I am the master"
+             MasterBehavior="Popover"
+                  NavigationPage.HasNavigationBar="False">
+    <MasterDetailPage.Master>
+        <ContentPage Padding="10" BackgroundColor="Gray" Title="Master">
+            <ContentPage.Content>
+                <StackLayout Margin="2,30,2,2">
+                  
+                    <Button Text="Straws" Clicked="Button_Clicked" BackgroundColor="LightGreen" BorderRadius="50" BorderWidth="1"/>
+                    <Button Text="Bags" Clicked="Button_Clicked_1" BackgroundColor="LightGreen" BorderRadius="50" BorderWidth="1"/>
+                    <Button Text="Thermal Bottles" Clicked="Button_Clicked_4" BackgroundColor="LightGreen" BorderRadius="50" BorderWidth="1"/>
+                    <Button Text="Cart" Clicked="Button_Clicked_3" BackgroundColor="LightGreen" BorderRadius="50" BorderWidth="1"/>
+                    <Button Text="About Us" Clicked="Button_Clicked_2" BackgroundColor="LightGreen" BorderRadius="50" BorderWidth="1"/>
+                    <Button Text="Log Out" Clicked="Button_Clicked_5" BackgroundColor="LightGreen" BorderRadius="50" BorderWidth="1"/>
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <ContentPage Padding="10">
+            <ContentPage.Content>
+                <StackLayout Margin="5,30,5,5">
+                    <Label Text="Master page detail"/>
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
