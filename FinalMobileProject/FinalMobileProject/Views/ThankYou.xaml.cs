@@ -19,9 +19,13 @@ namespace FinalMobileProject.Views
             this.BackgroundImage = "background.jpg";
         }
 
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
+        }
         private void Button_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MainMenu());
+            Navigation.PushAsync(new MenuPage());
         }
     }
 }

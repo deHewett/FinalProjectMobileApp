@@ -53,7 +53,7 @@ namespace FinalMobileProject.Views
                 if (!results.IsValid)
                 {
                     Console.WriteLine("RESULTS in IF: " + results);
-                    await DisplayAlert("Sorry", "Error: "+ results, "Okay");
+                    await DisplayAlert("Sorry", "Error: "+results, "Okay");
 
                     /*foreach (var failure in results.Errors)
                     {
@@ -92,28 +92,7 @@ namespace FinalMobileProject.Views
                 
             }
         }
-       /* private bool CheckContributor(User contributor)
-        {
-            foreach(PropertyInfo contributee in contributor.GetType().GetProperties())
-            {
-                Console.WriteLine("this: " + contributee.PropertyType);
-                Console.WriteLine();
-                if (contributee.PropertyType == typeof(string))
-                {
-                    string value = (string)contributee.GetValue(contributor);
-                    if (string.IsNullOrEmpty(value))
-
-
-                        return false;
-                }
-
-            }
-          
-            return true;
-        }
-
-
-        //not using this button
+       /* not using this button
         private void Button_Clicked_1(object sender, EventArgs e)
         {
             conn.CreateTable<User>();

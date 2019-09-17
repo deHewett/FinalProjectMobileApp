@@ -15,7 +15,10 @@
                   
                     <Button Text="Straws" Clicked="Button_Clicked" BackgroundColor="LightGreen" BorderRadius="50" BorderWidth="1"/>
                     <Button Text="Bags" Clicked="Button_Clicked_1" BackgroundColor="LightGreen" BorderRadius="50" BorderWidth="1"/>
+                    <Button Text="Thermal Bottles" Clicked="Button_Clicked_4" BackgroundColor="LightGreen" BorderRadius="50" BorderWidth="1"/>
+                    <Button Text="Cart" Clicked="Button_Clicked_3" BackgroundColor="LightGreen" BorderRadius="50" BorderWidth="1"/>
                     <Button Text="About Us" Clicked="Button_Clicked_2" BackgroundColor="LightGreen" BorderRadius="50" BorderWidth="1"/>
+                    <Button Text="Log Out" Clicked="Button_Clicked_5" BackgroundColor="LightGreen" BorderRadius="50" BorderWidth="1"/>
                 </StackLayout>
             </ContentPage.Content>
         </ContentPage>

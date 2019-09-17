@@ -13,7 +13,12 @@ namespace FinalMobileProject.Views
           
             this.Title = "Login";
         }
-        
+
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
+        }
+
 
         private void Button_Clicked(object sender, EventArgs e)
         {
