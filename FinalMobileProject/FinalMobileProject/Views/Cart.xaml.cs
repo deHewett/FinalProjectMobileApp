@@ -18,32 +18,21 @@ namespace FinalMobileProject.Views
         CartQuery c = new CartQuery();
         public Cart()
         {
-          
             InitializeComponent();
            this.Title = "Cart";
-            
-           
-            
-
-
             cart.ItemsSource = c.GetList();
-            total.Text = c.GetTotal() + "";
-            
+            total.Text = c.GetTotal() + "";  
         }
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-
             if (c.GetTotal() > 0)
             {
                 Navigation.PushAsync(new PayNow());
             }
             else {
                 DisplayAlert("There is nothing in the cart. Please continue shopping","","Return");
-            }
-            
-        }
-
-        
+            }            
+        }        
     }
 }

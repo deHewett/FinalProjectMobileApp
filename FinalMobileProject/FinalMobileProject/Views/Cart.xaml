@@ -6,15 +6,10 @@
              xmlns:ViewModels="clr-namespace:FinalMobileProject.ViewModels"
              mc:Ignorable="d"
              x:Class="FinalMobileProject.Views.Cart">
-
-
     <ContentPage.BindingContext>
         <ViewModels:ProductViewModel/>
     </ContentPage.BindingContext>
     <StackLayout>
-
-   
-
         <ListView x:Name="cart" RowHeight="60">
             <ListView.ItemTemplate >
                 <DataTemplate>
@@ -30,9 +25,7 @@
                                             <Label Text="Qty:" WidthRequest="60" HorizontalTextAlignment="End" VerticalOptions="End" HorizontalOptions="End"/>
                                             <Label Text="{Binding Qty}" FontSize="Small" HorizontalTextAlignment="End" VerticalOptions="End" HorizontalOptions="End" />
                                             <Label Text="Price:" WidthRequest="60" HorizontalTextAlignment="End" VerticalOptions="End" FontSize="20" HorizontalOptions="End"/>
-                                           <Label Text="{Binding Total}" VerticalOptions="End" HorizontalOptions="End" FontSize="20" HorizontalTextAlignment="End" />
-                                            
-
+                                            <Label Text="{Binding Total}" VerticalOptions="End" HorizontalOptions="End" FontSize="20" HorizontalTextAlignment="End" />
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
