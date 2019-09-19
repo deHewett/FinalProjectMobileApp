@@ -20,7 +20,7 @@ namespace FinalMobileProject.Views
         {
             InitializeComponent();
             BindingContext = new ProductViewModel();
-            this.Title = "straw";
+            this.Title = "Straw";
             this.BackgroundImage = "background.jpg";
         }
 
