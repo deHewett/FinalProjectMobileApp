@@ -17,15 +17,11 @@ namespace FinalMobileProject.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SignUp : ContentPage
     {
-        
-
         public SignUp()
         {
             InitializeComponent();
 
         }
-        
-
         private async void Button_Clicked(object sender, EventArgs e)
         {
             //string hash = Hashing.HashPassword(Password.Text);
@@ -41,9 +37,6 @@ namespace FinalMobileProject.Views
 
             Console.WriteLine("THIS IS PRE INSERT USER OBJECT: " + user.Username);
 
-
-            
-            
                // User customer = new User();
                 CustomerValidator validator = new CustomerValidator();
                 ValidationResult results = validator.Validate(user);
@@ -54,16 +47,6 @@ namespace FinalMobileProject.Views
                 {
                     Console.WriteLine("RESULTS in IF: " + results);
                     await DisplayAlert("Sorry", "Error: "+results, "Okay");
-
-                    /*foreach (var failure in results.Errors)
-                    {
-                        //Console.WriteLine("Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage);
-                        if (failure == null)
-                        {
-                            Console.WriteLine("Property " + failure);
-                            return;
-                        }
-                    }*/
 
                 }
                 else {
@@ -92,11 +75,5 @@ namespace FinalMobileProject.Views
                 
             }
         }
-       /* not using this button
-        private void Button_Clicked_1(object sender, EventArgs e)
-        {
-            conn.CreateTable<User>();
-            var users = conn.Table<User>().ToList();
-            Datalist.ItemsSource = users;
-        }*/
+      
     }
