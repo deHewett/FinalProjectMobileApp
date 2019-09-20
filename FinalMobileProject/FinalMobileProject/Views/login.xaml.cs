@@ -42,19 +42,20 @@ namespace FinalMobileProject.Views
 
                              }*/
                         }
-                        
-                    }
-                    if (!valid)
-                    {
-                        DisplayAlert("", "Incorrect username or password", "okay");
                     }
                     
+
+
                     //Datalist.ItemsSource = users;
 
                 }
                 catch(Exception error)
                 {
                     Console.WriteLine(error);
+                    if (!valid)
+                    {
+                        DisplayAlert("", "Incorrect username or password", "okay");
+                    }
                 }
                 
                 
