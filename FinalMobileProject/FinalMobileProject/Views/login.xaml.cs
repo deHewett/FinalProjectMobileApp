@@ -37,17 +37,16 @@ namespace FinalMobileProject.Views
                             Navigation.PushAsync(new MenuPage());
                             valid = true;
                         }
-                        
-                    }
-                    if (!valid)
-                    {
-                        DisplayAlert("", "Incorrect username or password", "okay");
                     }
                     
                 }
                 catch(Exception error)
                 {
                     Console.WriteLine(error);
+                    if (!valid)
+                    {
+                        DisplayAlert("", "Incorrect username or password", "okay");
+                    }
                 }
                 
                 
