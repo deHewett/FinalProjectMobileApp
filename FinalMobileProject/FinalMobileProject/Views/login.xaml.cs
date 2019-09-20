@@ -36,11 +36,6 @@ namespace FinalMobileProject.Views
                         {
                             Navigation.PushAsync(new MenuPage());
                             valid = true;
-
-                            /* if(Hashing.ValidatePassword(password, users[i].Password))
-                             {
-
-                             }*/
                         }
                         
                     }
@@ -49,8 +44,6 @@ namespace FinalMobileProject.Views
                         DisplayAlert("", "Incorrect username or password", "okay");
                     }
                     
-                    //Datalist.ItemsSource = users;
-
                 }
                 catch(Exception error)
                 {
